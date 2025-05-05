@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointments",
+  "info": {
+    "singularName": "appointment",
+    "pluralName": "appointments",
+    "displayName": "Appointment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "appointmentdate": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Awaiting",
+        "Approved",
+        "Rejected",
+        "Cancelled"
+      ]
+    },
+    "operation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::operation.operation"
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}
